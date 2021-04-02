@@ -112,21 +112,6 @@ message(STATUS "Don't build examples")
 else ()
 message(STATUS "Build examples")
 
-add_executable(rgbd_tum Examples/RGB-D/rgbd_tum.cc)
-target_link_libraries(rgbd_tum ${PROJECT_NAME})
-
-add_executable(stereo_kitti Examples/Stereo/stereo_kitti.cc)
-target_link_libraries(stereo_kitti ${PROJECT_NAME})
-
-add_executable(mono_tum Examples/Monocular/mono_tum.cc)
-target_link_libraries(mono_tum ${PROJECT_NAME})
-
-add_executable(mono_kitti Examples/Monocular/mono_kitti.cc)
-target_link_libraries(mono_kitti ${PROJECT_NAME})
-
-add_executable(csi_camera gpu/csi_camera.cc)
-target_link_libraries(csi_camera ${PROJECT_NAME})
-
 add_executable(stereo_real_sense RealSense_GPU/stereo_real_sense.cc)
 target_link_libraries(stereo_real_sense ${PROJECT_NAME})
 
