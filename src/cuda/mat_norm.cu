@@ -3,8 +3,8 @@
 #include <cuda_runtime.h>
 #include <cuda/mat_norm.hpp>
 #include <helper_cuda.h>
-#include <opencv2/core/cuda.hpp>
-#include <opencv2/cudaarithm.hpp>
+#include "opencv2/core/cuda.hpp"
+#include "opencv2/cudaarithm.hpp"
 #include <Utils.hpp>
 #include <cuda/Allocator.hpp>
 

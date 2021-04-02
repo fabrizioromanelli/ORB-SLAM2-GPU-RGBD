@@ -7,11 +7,11 @@ ENDIF()
 
 MESSAGE(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 
-set(CMAKE_C_FLAGS_DEBUG "-O2 -g")
-set(CMAKE_CXX_FLAGS_DEBUG "-O2 -g")
+set(CMAKE_C_FLAGS_DEBUG "-O2 -g -DEIGEN_NO_DEPRECATED_WARNING -Wno-unused-but-set-variable -Wno-unused-function")
+set(CMAKE_CXX_FLAGS_DEBUG "-O2 -g -DEIGEN_NO_DEPRECATED_WARNING -Wno-unused-but-set-variable -Wno-unused-function")
 
-set(CMAKE_C_FLAGS_RELEASE "-O3")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_C_FLAGS_RELEASE "-O3 -DEIGEN_NO_DEPRECATED_WARNING -Wno-unused-but-set-variable -Wno-unused-function")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DEIGEN_NO_DEPRECATED_WARNING -Wno-unused-but-set-variable -Wno-unused-function")
 
 include(FindOpenMP)
 LIST(APPEND CMAKE_C_FLAGS "-Wall -Wextra -DUSE_NVTX")
@@ -47,7 +47,7 @@ message(STATUS ${CMAKE_CUDA_COMPILER})
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV 3.4.1 REQUIRED)
+find_package(OpenCV 4.5.1 REQUIRED)
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 
